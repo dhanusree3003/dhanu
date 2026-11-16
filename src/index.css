@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-padding-top: 5.5rem;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-serif);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes skc-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes skc-blink {
+  0%, 92%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes skc-wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-16deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  75% {
+    transform: rotate(-14deg);
+  }
+}
+
+@keyframes skc-walk-a {
+  0%, 100% {
+    transform: rotate(-10deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(11deg) translate3d(0, -3px, 0);
+  }
+}
+
+@keyframes skc-walk-b {
+  0%, 100% {
+    transform: rotate(11deg) translate3d(0, -3px, 0);
+  }
+  50% {
+    transform: rotate(-10deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes skc-walk-bob {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(0, -4px, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes skc-type-l {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  40% {
+    transform: translate3d(1px, -3px, 0) rotate(-4deg);
+  }
+  70% {
+    transform: translate3d(-1px, 1px, 0) rotate(2deg);
+  }
+}
+
+@keyframes skc-type-r {
+  0%, 100% {
+    transform: translate3d(0, -2px, 0) rotate(3deg);
+  }
+  35% {
+    transform: translate3d(-1px, 1px, 0) rotate(-3deg);
+  }
+  75% {
+    transform: translate3d(1px, -3px, 0) rotate(4deg);
+  }
+}
+
+@keyframes skc-head-nod {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(3.5deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes skc-tassel-sway {
+  0%, 100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes skc-sparkle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.85) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) translate3d(0, -4px, 0);
+  }
+}
+
+.skc-float {
+  animation: skc-float 4.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.skc-float-delayed {
+  animation: skc-float 4.6s ease-in-out 0.9s infinite;
+  will-change: transform;
+}
+
+.skc-blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: skc-blink 4.2s ease-in-out infinite;
+}
+
+.skc-blink-delayed {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: skc-blink 4.8s ease-in-out 1.7s infinite;
+}
+
+.skc-wave {
+  transform-box: fill-box;
+  transform-origin: 85% 85%;
+  animation: skc-wave 2.8s ease-in-out infinite;
+}
+
+.skc-walk-a {
+  transform-box: fill-box;
+  transform-origin: 50% 10%;
+  animation: skc-walk-a 1.6s ease-in-out infinite;
+}
+
+.skc-walk-b {
+  transform-box: fill-box;
+  transform-origin: 50% 10%;
+  animation: skc-walk-b 1.6s ease-in-out infinite;
+}
+
+.skc-walk-bob {
+  animation: skc-walk-bob 1.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.skc-type-l {
+  transform-box: fill-box;
+  transform-origin: 20% 20%;
+  animation: skc-type-l 0.9s ease-in-out infinite;
+}
+
+.skc-type-r {
+  transform-box: fill-box;
+  transform-origin: 80% 20%;
+  animation: skc-type-r 0.85s ease-in-out 0.2s infinite;
+}
+
+.skc-head-nod {
+  transform-box: fill-box;
+  transform-origin: 50% 85%;
+  animation: skc-head-nod 5s ease-in-out infinite;
+}
+
+.skc-tassel {
+  transform-box: fill-box;
+  transform-origin: 50% 5%;
+  animation: skc-tassel-sway 3.2s ease-in-out infinite;
+}
+
+.skc-sparkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: skc-sparkle 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
